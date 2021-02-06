@@ -3,7 +3,22 @@ def main():
     #euler_1(1000)
     #euler_2(4000000)
     #euler_3(600851475143)
-    euler_4(3)
+    #euler_4(3)
+    euler_5(20)
+
+def euler_5(num):
+    # 2520 is the smallest number that can be divided by each of the numbers from 1 to 10 without any remainder.
+    # What is the smallest positive number that is evenly divisible by all of the numbers from 1 to 20?
+    num_range = [i for i in range(2, num+1)]
+    base = num
+    while True:
+        current_num = base
+        for i in num_range:
+            if base % i != 0:
+                base += num # can never be less than the largest number
+        if current_num == base: 
+            print(f"Smallest divisible number from 1 to {num} is {base}")
+            return
 
 def euler_4(num):
     #A palindromic number reads the same both ways. The largest palindrome made from the product of two 2-digit numbers is 9009 = 91 × 99.
