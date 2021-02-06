@@ -4,7 +4,23 @@ def main():
     #euler_2(4000000)
     #euler_3(600851475143)
     #euler_4(3)
-    euler_5(20)
+    #euler_5(20)
+    euler_6(100)
+
+
+def euler_6(num):
+    # The square of the sum of the first ten natural numbers is,
+    # Hence the difference between the sum of the squares of the first ten natural numbers and the square of the sum is .
+    # Find the difference between the sum of the squares of the first one hundred natural numbers and the square of the sum.
+    num_range = [i for i in range(1, num+1)]
+    sum_squares = 0
+    sum_numbers_sq = 0
+    for i in num_range:
+        sum_squares += i ** 2
+        sum_numbers_sq += i
+    sum_numbers_sq = sum_numbers_sq ** 2
+    print(f"The difference: {sum_numbers_sq - sum_squares}, sum squares: {sum_squares} sum numbers squared: {sum_numbers_sq}")
+
 
 def euler_5(num):
     # 2520 is the smallest number that can be divided by each of the numbers from 1 to 10 without any remainder.
@@ -17,8 +33,9 @@ def euler_5(num):
             if base % i != 0:
                 base += num # can never be less than the largest number
         if current_num == base: 
-            print(f"Smallest divisible number from 1 to {num} is {base}")
+            print(f"Smallest number divisible by range 1 to {num} is {base}")
             return
+
 
 def euler_4(num):
     #A palindromic number reads the same both ways. The largest palindrome made from the product of two 2-digit numbers is 9009 = 91 × 99.
